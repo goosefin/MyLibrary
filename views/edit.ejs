@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Book</title>
-</head>
-<body>
+<%- include('./partials/header.ejs') %>
     <h1>Edit Book/Add Review</h1>
     <form action="/mylibrary/<%=book.id%>?_method=PUT" method="POST">
         <fieldset>
