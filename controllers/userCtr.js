@@ -29,6 +29,7 @@ router.post('/signup', (req,res) =>{
     })
 })
 
+// Sign In
 router.get('/signin', (req,res) =>{
     res.render('users/signin.ejs')
 })
@@ -49,6 +50,10 @@ router.post('/signin', (req,res) =>{
     })
 })
 
-
+//Sign Out
+router.get('/signout', (req,res) =>{
+    req.session.destroy()
+    res.redirect('/mylibrary')
+})
 
 module.exports = router
