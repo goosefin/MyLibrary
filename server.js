@@ -1,0 +1,44 @@
+// Required packages
+const express = require('express')
+const app = express()
+const methodOverride = require('method-override')
+const {render} = require('ejs')
+const session = require('express-session')
+const mongoose = require('mongoose')
+require('dotenv').config()
+
+// DotEnv import
+const PORT = process.env.PORT
+const mongoURI = process.env.MONGODB_URI
+const SESSION_SECRET = process.env.SESSION_SECRET
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+// Controllers
+const booksController = require('./controllers/booksCtr.js')
+const usersController = require('./controllers/userCtr.js')
+
+// Mongoose
+const db = mongoose.connection
+mongoose.connect(mongoURI,() =>{
+    console.log('Database connected!')
+})
+db.on('error', (err) => { console.log('ERROR: ', err) })
+db.on('connected', () => { console.log('Mongo connected.') })
+db.on('disconnected', () => { console.log('Mongo disconnected') })
+
+// Imports
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(methodOverride('_method'))
+app.use(express.static('public'))
+app.use('/mylibrary', booksController)
+app.use('/users', usersController)
+
+//Listener
+app.listen(PORT, () =>{
+    console.log('listening on port: ' + PORT)
+})
