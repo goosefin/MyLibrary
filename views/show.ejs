@@ -1,5 +1,6 @@
 <%- include('./partials/header.ejs') %>
     <h1>Book Show Page</h1>
+    <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-M.jpg" alt="">
     <p>Title: <%=book.title%></p>
     <p>Author: <%=book.author%></p>
     <p>Your Rating: <%=book.starRating%></p>
@@ -12,6 +13,7 @@
         <% } %>
     </p>
     <p>Owned by: <%=book.ownedBy%></p>
+    <p>Isbn Number: <%=book.isbn%></p>
 
     <a href="/mylibrary/<%=book.id%>/edit">
         <button>Edit Book/Add Review</button>

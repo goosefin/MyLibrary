@@ -7,7 +7,8 @@ const bookSchema = new mongoose.Schema({
     starRating: {type:Number, min:0, max:5, default:0},
     review: String,
     status: Boolean,
-    ownedBy: String
+    ownedBy: String,
+    isbn: Number,
 })
 
 const Book = mongoose.model('Book', bookSchema)

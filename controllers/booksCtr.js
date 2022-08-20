@@ -18,7 +18,7 @@ router.get('/seed', (req,res) =>{
             title: 'One Shot',
             author: 'Lee Child',
             starRating: 5,
-            review: 'Another hit from mister Lee Child',
+            review: 'Another hit from mister Lee Child.',
             status: true,
             ownedBy: 'agustinafin96@gmail.com' 
         },
