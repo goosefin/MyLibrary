@@ -2,10 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/books.js')
 
-router.get('/', (req,res) =>{
-    res.send('Working')
-})
-
 router.get('/seed', (req,res) =>{
     Book.create([
         {
@@ -34,6 +30,16 @@ router.get('/seed', (req,res) =>{
         }
     ], (err, data) =>{
         res.redirect('/mylibrary')
+    })
+})
+
+router.get('/', (req,res) =>{
+    Book.find({}, (err, allBooks) =>{
+        if(err){
+            console.log(err)
+        }else{
+            res.render('index.ejs',{allBooks})
+        }
     })
 })
 
