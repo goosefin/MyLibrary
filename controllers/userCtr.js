@@ -29,6 +29,26 @@ router.post('/signup', (req,res) =>{
     })
 })
 
+router.get('/signin', (req,res) =>{
+    res.render('users/signin.ejs')
+})
+
+router.post('/signin', (req,res) =>{
+    User.findOne({email:req.body.email}, (err, foundUser) =>{
+        if(foundUser){
+            const validLogin = bcrypt.compareSync(req.body.password, foundUser.password)
+            if(validLogin){
+                req.session.currentUser = foundUser
+                res.redirect('/mylibrary')
+            }else{
+                res.send('Invalid email or password')
+            }
+        }else{
+            res.send('Invalid email or password')
+        }
+    })
+})
+
 
 
 module.exports = router
