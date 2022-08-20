@@ -43,4 +43,10 @@ router.get('/', (req,res) =>{
     })
 })
 
+router.get('/:id', (req, res) =>{
+    Book.findById(req.params.id, (err,book) =>{
+        res.render('show.ejs', {book})
+    })
+})
+
 module.exports = router
