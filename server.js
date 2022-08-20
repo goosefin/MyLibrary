@@ -22,13 +22,10 @@ const booksController = require('./controllers/booksCtr.js')
 const usersController = require('./controllers/userCtr.js')
 
 // Mongoose
-const db = mongoose.connection
-mongoose.connect(mongoURI,() =>{
-    console.log('Database connected!')
-})
-db.on('error', (err) => { console.log('ERROR: ', err) })
-db.on('connected', () => { console.log('Mongo connected.') })
-db.on('disconnected', () => { console.log('Mongo disconnected') })
+mongoose.connect(mongoURI);
+mongoose.connection.once('open', ()=> {
+    console.log('connected to mongo');
+});
 
 // Imports
 app.use(express.json())
@@ -37,6 +34,10 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use('/mylibrary', booksController)
 app.use('/users', usersController)
+
+// app.get('/mylibrary', (req,res) =>{
+//     res.send('Working')
+// })
 
 //Listener
 app.listen(PORT, () =>{
