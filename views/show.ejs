@@ -10,9 +10,21 @@
     <h1>Book Show Page</h1>
     <p>Title: <%=book.title%></p>
     <p>Author: <%=book.author%></p>
-    <p>Your Rating: <%=book.rating%></p>
+    <p>Your Rating: <%=book.starRating%></p>
     <p>Review: <%=book.review%></p>
-    <p>Read Status: <%=book.status%></p>
+    <p>Read Book:
+        <% if(book.staus === true){ %>
+            Yes
+        <% }else{ %>
+            No
+        <% } %>
+    </p>
     <p>Owned by: <%=book.ownedBy%></p>
+
+    <a href="/mylibrary/<%=book.id%>/edit">
+        <button>Edit Book/Add Review</button>
+    </a>
+
+    <a href="/mylibrary">Back to Library</a>
 </body>
 </html>

@@ -49,4 +49,21 @@ router.get('/:id', (req, res) =>{
     })
 })
 
+router.get('/:id/edit', (req,res) =>{
+    Book.findById(req.params.id, (err,book) =>{
+        res.render('edit.ejs', {book})
+    })
+})
+    
+router.put('/:id', (req,res) =>{
+    if(req.body.status === 'on'){
+        req.body.status = true
+    }else{
+        req.body.status = false
+    }
+    Book.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedBook) =>{
+        res.redirect('/mylibrary/'+req.params.id)
+    })
+})
+
 module.exports = router
