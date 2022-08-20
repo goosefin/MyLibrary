@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/books.js')
 
+//Simple Seed
 router.get('/seed', (req,res) =>{
     Book.create([
         {
@@ -33,6 +34,7 @@ router.get('/seed', (req,res) =>{
     })
 })
 
+// Index
 router.get('/', (req,res) =>{
     Book.find({}, (err, allBooks) =>{
         if(err){
@@ -43,12 +45,34 @@ router.get('/', (req,res) =>{
     })
 })
 
+// New
+router.get('/new', (req,res) =>{
+    res.render('new.ejs')
+})
+
+router.post('/', (req,res) =>{
+    if(req.body.status == 'on'){
+        req.body.status = true
+    } else{
+        req.body.status = false
+    }
+    Book.create(req.body, (err,book) =>{
+        if(err){
+            console.log(err)
+        }else{
+            res.redirect('/mylibrary')
+        }
+    })
+})
+
+// Show
 router.get('/:id', (req, res) =>{
     Book.findById(req.params.id, (err,book) =>{
         res.render('show.ejs', {book})
     })
 })
 
+// Edit
 router.get('/:id/edit', (req,res) =>{
     Book.findById(req.params.id, (err,book) =>{
         res.render('edit.ejs', {book})
@@ -65,5 +89,6 @@ router.put('/:id', (req,res) =>{
         res.redirect('/mylibrary/'+req.params.id)
     })
 })
+
 
 module.exports = router
