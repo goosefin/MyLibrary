@@ -2,6 +2,15 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/books.js')
 
+//Authenification middleware
+const authRequired = (req,res,next) =>{
+    if(req.session.currentUser){
+        next()
+    }else{
+        res.send('you must be logged in to do that!')
+    }
+}
+
 //Simple Seed
 router.get('/seed', (req,res) =>{
     Book.create([
@@ -46,7 +55,7 @@ router.get('/', (req,res) =>{
 })
 
 // New
-router.get('/new', (req,res) =>{
+router.get('/new', authRequired, (req,res) =>{
     res.render('new.ejs')
 })
 
@@ -73,7 +82,7 @@ router.get('/:id', (req, res) =>{
 })
 
 // Edit
-router.get('/:id/edit', (req,res) =>{
+router.get('/:id/edit', authRequired, (req,res) =>{
     Book.findById(req.params.id, (err,book) =>{
         res.render('edit.ejs', {book})
     })
@@ -87,6 +96,17 @@ router.put('/:id', (req,res) =>{
     }
     Book.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedBook) =>{
         res.redirect('/mylibrary/'+req.params.id)
+    })
+})
+
+// Delete
+router.delete('/:id', authRequired, (req,res) =>{
+    Book.findByIdAndRemove(req.params.id, (err, book) =>{
+        if(err){
+            console.log(err)
+        }else{
+            res.redirect('/mylibrary')
+        }
     })
 })
 
