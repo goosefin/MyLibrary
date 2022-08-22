@@ -5,7 +5,6 @@ nav{
     align-items:center;
     background-color: #1B4353 ;
     height: 5em;
-    border-bottom: 5px solid black;
 }
 
 .nav{
@@ -17,3 +16,38 @@ nav{
 .nav:hover{
     color: #77A6B6;
 }
+
+/* Add new book */
+#starRating{
+    width:25em;
+}
+
+#new-book-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #77A6B6;
+    border-radius: 1em;
+    width: 50%;
+    margin-left: 22em;
+    padding: 10px;
+}
+
+.input-group{
+    width: 25em;
+}
+
+#add-book-btn{
+    background-color: #1B4353;
+    color: white;
+}
+
+#new-book-h1{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div> */

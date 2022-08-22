@@ -1,31 +1,41 @@
 <%- include('./partials/header.ejs') %>
-    <h1>Add a new book to your library!</h1>
-    <form action="/mylibrary" method="POST">
-        <fieldset>
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title"/>
+    <h1 id="new-book-h1">Add a new book to your library!</h1>
+    <form action="/mylibrary" method="POST" id="new-book-form">
+        <fieldset class="input-group">
+            <span class="input-group-text">Title</span>
+            <label for="title" class="form-label"></label>
+            <input type="text" name="title" id="title" class="form-control"/>
+        </fieldset>
+        <fieldset class="input-group">
+            <span class="input-group-text">Author</span>
+            <label for="author" class="form-label"></label>
+            <input type="text" name="author" id="author" class="form-control"/>
+        </fieldset>
+        <fieldset class="input-group">
+            <span class="input-group-text">ISBN Number</span>
+            <label for="isbn" class="form-label"></label>
+            <input type="number" name="isbn" id="isbn" class="form-control"/>
         </fieldset>
         <fieldset>
-            <label for="author">Author:</label>
-            <input type="text" name="author" id="author"/>
+            <select name="starRating" id="starRating" class="form-select">
+                <option selected>Book Rating</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+            </select>
         </fieldset>
-        <fieldset>
-            <label for="isbn">Isbn Number:</label>
-            <input type="number" name="isbn" id="isbn"/>
+        <fieldset class="input-group">
+            <span class="input-group-text">Book Review</span>
+            <label for="review" class="form-label"></label>
+            <textarea name="review" id="review" cols="30" rows="10" class="form-control"></textarea> 
         </fieldset>
-        <fieldset>
-            <label for="starRating">Star Rating (0 to 5):</label>
-            <input type="number" name="starRating" id="starRating"/>
+        <fieldset class="form-check form-switch">
+            <label for="status" class="form-label">Read book?</label>
+            <input type="checkbox" name="status" id="status" class="form-check-input" role="switch"/>
         </fieldset>
-        <fieldset>
-            <label for="review">Your review:</label>
-            <textarea name="review" id="review" cols="30" rows="10"></textarea> 
-        </fieldset>
-        <fieldset>
-            <label for="status">Read book?</label>
-            <input type="checkbox" name="status" id="status"/>
-        </fieldset>
-        <input type="submit" value="Add Book">
+        <input type="submit" value="Add Book" id="add-book-btn" class="btn">
     </form>
 </body>
 </html>
