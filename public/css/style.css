@@ -1,0 +1,19 @@
+/* Navbar Styles */
+nav{
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: #1B4353 ;
+    height: 5em;
+    border-bottom: 5px solid black;
+}
+
+.nav{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav:hover{
+    color: #77A6B6;
+}
