@@ -1,9 +1,9 @@
-/* Body Styles */
+/* ----- Body Styles ----- */
 body{
     font-family: 'Jura', sans-serif;
 }
 
-/* Navbar Styles */
+/* ----- Navbar Styles ----- */
 nav{
     display: flex;
     justify-content:space-around;
@@ -22,7 +22,7 @@ nav{
     color: #77A6B6;
 }
 
-/* Add New Book Page Styles*/
+/* ----- Add New Book Page Styles ----- */
 #starRating{
     width:25em;
 }
@@ -52,7 +52,7 @@ nav{
     margin-top: 10px;
 }
 
-/* Sign In Page Styles*/
+/* ----- Sign In Page Styles ----- */
 #sign-in-form{
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@ nav{
     margin:5px;
 }
 
-/* Sign Up Page Style*/
+/* ----- Sign Up Page Style ----- */
 #sign-up-h1{
     text-align: center;
 }
@@ -99,4 +99,28 @@ nav{
     background-color: #1B4353;
     color: white;
     margin: 5px 0px 5px 0px;
+}
+
+/* ----- Index Page Styling ----- */
+#index-h1{
+    text-align: center;
+    padding: 20px;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+li{
+    width:18rem;
+    margin-bottom: 2em;
+    display: flex;
+}
+
+.card-link{
+    text-align: center;
+    text-decoration: none;
+    color: #113435;
 }
