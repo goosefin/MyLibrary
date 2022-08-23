@@ -1,25 +1,30 @@
 <%- include('./partials/header.ejs') %>
-    <h1>Book Show Page</h1>
-    <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="">
-    <p>Title: <%=book.title%></p>
-    <p>Author: <%=book.author%></p>
-    <p>Your Rating: <%=book.starRating%></p>
-    <p>Review: <%=book.review%></p>
-    <p>Read Book:
-        <% if(book.staus === true){ %>
-            Yes
-        <% }else{ %>
-            No
-        <% } %>
-    </p>
-    <p>Owned by: <%=book.ownedBy%></p>
-    <p>Isbn Number: <%=book.isbn%></p>
+        <div id="info">
+        <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-L.jpg" alt="" id="book-cover">
+        <div id="book-info">
+            <p>Title: <%=book.title%></p>
+            <p>Author: <%=book.author%></p>
+            <p>Your Rating: <%=book.starRating%></p>
+            <p>Review: <%=book.review%></p>
+            <p>Read Book:
+                <% if(book.staus === true){ %>
+                 Yes
+                <% }else{ %>
+                 No
+                <% } %>
+            </p>
+            <p>Owned by: <%=book.ownedBy%></p>
+        </div>
+        </div>
 
+    <div id="btn-div">
     <a href="/mylibrary/<%=book.id%>/edit">
-        <button>Edit Book/Add Review</button>
+        <button id="edit-btn" class="btn">Edit Book/Add Review</button>
     </a>
+
     <form action="/mylibrary/<%=book.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Remove book from your library">
+        <input type="submit" value="Remove book from your library" class="btn" id="delete-btn">
     </form>
+    </div>
 </body>
 </html>

@@ -124,3 +124,39 @@ li{
     text-decoration: none;
     color: #113435;
 }
+
+/* ----- Show Page Style ----- */
+#book-cover{
+    width: 20em;
+    margin-left: 10em;
+    display:inline;
+    border: 5px solid #113435;
+}
+
+#book-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10em;
+    font-size: 1.5em;
+}
+
+#info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+#btn-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:20em;
+    margin-left: 50em;
+}
+
+#edit-btn, #delete-btn{
+    background-color: #1B4353;
+    color: white;
+    margin: 5px 0px 5px 0px;
+}
