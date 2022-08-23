@@ -1,17 +1,17 @@
 <%- include('./partials/header.ejs') %>
     <h1 id="new-book-h1">Add a new book to your library!</h1>
     <form action="/mylibrary" method="POST" id="new-book-form">
-        <fieldset class="input-group add-book-input">
+        <fieldset class="input-group form-margin">
             <span class="input-group-text">Title</span>
             <label for="title" class="form-label"></label>
             <input type="text" name="title" id="title" class="form-control"/>
         </fieldset>
-        <fieldset class="input-group add-book-input">
+        <fieldset class="input-group form-margin">
             <span class="input-group-text">Author</span>
             <label for="author" class="form-label"></label>
             <input type="text" name="author" id="author" class="form-control"/>
         </fieldset>
-        <fieldset class="input-group add-book-input">
+        <fieldset class="input-group form-margin">
             <span class="input-group-text">ISBN Number</span>
             <label for="isbn" class="form-label"></label>
             <input type="number" name="isbn" id="isbn" class="form-control"/>
@@ -26,12 +26,12 @@
                 <option value="5">Five</option>
             </select>
         </fieldset>
-        <fieldset class="input-group add-book-input">
+        <fieldset class="input-group form-margin">
             <span class="input-group-text">Book Review</span>
             <label for="review" class="form-label"></label>
             <textarea name="review" id="review" cols="30" rows="10" class="form-control"></textarea> 
         </fieldset>
-        <fieldset class="form-check form-switch add-book-input">
+        <fieldset class="form-check form-switch form-margin">
             <label for="status" class="form-label">Read book?</label>
             <input type="checkbox" name="status" id="status" class="form-check-input" role="switch"/>
         </fieldset>

@@ -1,19 +1,22 @@
 <%- include('../partials/header.ejs') %>
-    <h1>Sign Up!</h1>
-    <form action="/users/signup" method="POST">
-        <fieldset>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username"/>
+    <h1 id="sign-up-h1">Sign Up!</h1>
+    <form action="/users/signup" method="POST" id="sign-up-form" >
+        <fieldset class="input-group form-margin">
+            <span class="input-group-text">Username</span>
+            <label for="username"></label>
+            <input type="text" name="username" id="username" class="form-control"/>
         </fieldset>
-        <fieldset>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"/>
+        <fieldset class="input-group form-margin">
+            <span class="input-group-text">Email</span>
+            <label for="email"></label>
+            <input type="email" name="email" id="email" class="form-control"/>
         </fieldset>
-        <fieldset>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id=password>
+        <fieldset class="input-group form-margin">
+            <span class="input-group-text">Password</span>
+            <label for="password" class="form-label"></label>
+            <input type="password" name="password" id="password"  class="form-control"/>
         </fieldset>
-        <input type="submit" value="Sign Up!"/>
+        <input type="submit" value="Sign Up!" id="sign-up-btn" class="btn"/>
     </form>
 </body>
 </html>

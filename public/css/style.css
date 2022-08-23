@@ -42,10 +42,6 @@ nav{
     width: 25em;
 }
 
-.add-book-input{
-    margin: 5px;
-}
-
 #add-book-btn{
     background-color: #1B4353;
     color: white;
@@ -79,6 +75,28 @@ nav{
     margin-top:10px;
 }
 
-.sign-in-input{
+.form-margin{
     margin:5px;
+}
+
+/* Sign Up Page Style*/
+#sign-up-h1{
+    text-align: center;
+}
+
+#sign-up-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #77A6B6;
+    border-radius: 1em;
+    width: 50%;
+    margin-left: 22em;
+    padding: 10px;
+}
+
+#sign-up-btn{
+    background-color: #1B4353;
+    color: white;
+    margin: 5px 0px 5px 0px;
 }
