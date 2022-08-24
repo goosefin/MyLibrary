@@ -138,6 +138,7 @@ li{
     flex-direction: column;
     align-items: flex-start;
     margin-right: 10em;
+    margin-left: 3em;
     font-size: 1.5em;
 }
 
@@ -159,4 +160,20 @@ li{
     background-color: #1B4353;
     color: white;
     margin: 5px 0px 5px 0px;
+}
+
+/* ----- Edit Page Styling ----- */
+#edit-book-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #77A6B6;
+    border-radius: 1em;
+    width: 50%;
+    margin-left: 22em;
+    padding: 10px;
+}
+
+#edit-h1{
+    text-align: center;
 }

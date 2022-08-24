@@ -9,6 +9,8 @@ const bookSchema = new mongoose.Schema({
     status: Boolean,
     ownedBy: String,
     isbn: Number,
+    borrowed: Boolean,
+    borrowedBy: String,
 })
 
 const Book = mongoose.model('Book', bookSchema)
