@@ -120,6 +120,7 @@ li{
     background-image: url(https://i.imgur.com/oQX6c7A.jpg);
     background-size:contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .card-link{
