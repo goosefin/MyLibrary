@@ -32,12 +32,25 @@
             <textarea name="review" id="review" cols="30" rows="10" class="form-control"><%=book.review%></textarea> 
         </fieldset>
         <fieldset class="form-check form-switch form-margin">
-            <label for="status"></label>
+            <label for="status">Read book?</label>
             <input type="checkbox" class="form-check-input" name="status" id="status"
                 <% if(book.status === true) { %>
                     checked
                 <% } %>
             />
+        </fieldset>
+        <fieldset class="form-check form-switch form-margin">
+            <label for="borrowed" class="form-label">Book Is Borrowed</label>
+            <input type="checkbox" name="borrowed" id="borrowed" class="form-check-input" role="switch"
+            <% if(book.borrowed === true) { %>
+                checked
+            <% } %>
+            />
+        </fieldset>
+        <fieldset class="input-group form-margin borrowed" >
+            <span class="input-group-text">Borrowed By</span>
+            <label for="borrowedBy" class="form-label"></label>
+            <input type="text" name="borrowedBy" id="borrowedBy" class="form-control" value="<%=book.borrowedBy%>"/>
         </fieldset>
         <input type="submit" value="Edit Book/Add Review" id="edit-btn" class="btn">
     </form>

@@ -13,6 +13,14 @@
                  No
                 <% } %>
             </p>
+            <p>Book Is Borrowed:
+                <% if(book.borrowed === true){ %>
+                    Yes
+                    <p>Borrowed By: <%=book.borrowedBy%></p>
+                   <% }else{ %>
+                    No
+                   <% } %>
+            </p>       
         </div>
         </div>
 

@@ -65,6 +65,11 @@ router.post('/', (req,res) =>{
     } else{
         req.body.status = false
     }
+    if(req.body.borrowed == 'on'){
+        req.body.borrowed = true
+    } else{
+        req.body.borrowed = false
+    }
     Book.create(req.body, (err,book) =>{
         if(err){
             console.log(err)
@@ -93,6 +98,11 @@ router.put('/:id', (req,res) =>{
         req.body.status = true
     }else{
         req.body.status = false
+    }
+    if(req.body.borrowed == 'on'){
+        req.body.borrowed = true
+    } else{
+        req.body.borrowed = false
     }
     Book.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedBook) =>{
         res.redirect('/mylibrary/'+req.params.id)
