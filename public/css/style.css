@@ -125,6 +125,10 @@ li{
     color: #113435;
 }
 
+h6{
+    font-size: .8em;
+}
+
 /* ----- Show Page Style ----- */
 #book-cover{
     width: 20em;
@@ -176,4 +180,18 @@ li{
 
 #edit-h1{
     text-align: center;
+}
+
+/* ----- About Page Styling ----- */
+#about-h1{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#about{
+    width: 40em;
+    text-align: center;
+    font-size: 1.5em;
+    margin-left: 9em;
+    margin-top: 20px;
 }

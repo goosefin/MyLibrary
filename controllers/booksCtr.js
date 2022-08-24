@@ -54,6 +54,11 @@ router.get('/', (req,res) =>{
     })
 })
 
+// About
+router.get('/about', (req, res) =>{
+    res.render('about.ejs')
+})
+
 // New
 router.get('/new', authRequired, (req,res) =>{
     res.render('new.ejs')
