@@ -89,7 +89,7 @@ router.get('/:id', (req, res) =>{
 // Edit
 router.get('/:id/edit', authRequired, (req,res) =>{
     Book.findById(req.params.id, (err,book) =>{
-        res.render('edit.ejs', {book})
+        res.render('edit.ejs',{book})
     })
 })
     

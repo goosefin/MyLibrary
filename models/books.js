@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const bookSchema = new mongoose.Schema({
     title: {type:String, required:true},
     author: {type:String, required:true},
-    starRating: {type:Number, min:0, max:5, default:0},
+    starRating: {type:String, min:0, max:5, default:0},
     review: String,
     status: Boolean,
     ownedBy: String,
-    isbn: Number,
+    isbn: String,
     borrowed: Boolean,
     borrowedBy: String,
 })
