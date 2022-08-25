@@ -60,7 +60,7 @@ router.get('/', (req,res) =>{
 })
 
 // About
-router.get('/about', (req, res) =>{
+router.get('/', (req, res) =>{
     res.render('about.ejs')
 })
 
