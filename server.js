@@ -35,10 +35,6 @@ app.use(express.static('public'))
 app.use('/mylibrary', booksController)
 app.use('/users', usersController)
 
-// app.get('/mylibrary', (req,res) =>{
-//     res.send('Working')
-// })
-
 app.get('/', (req,res) =>{
     res.render('about.ejs')
 })

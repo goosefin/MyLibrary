@@ -7,7 +7,6 @@ const bookSchema = new mongoose.Schema({
     starRating: {type:String, min:0, max:5, default:0},
     review: String,
     status: Boolean,
-    ownedBy: String,
     isbn: String,
     borrowed: Boolean,
     borrowedBy: String,
