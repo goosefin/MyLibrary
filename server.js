@@ -39,6 +39,10 @@ app.use('/users', usersController)
 //     res.send('Working')
 // })
 
+app.get('/', (req,res) =>{
+    res.render('about.ejs')
+})
+
 //Listener
 app.listen(PORT, () =>{
     console.log('listening on port: ' + PORT)
