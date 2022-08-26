@@ -135,6 +135,10 @@ h6{
 
 /* ----- Show Page Style ----- */
 #book-cover{
+    background-image: url(https://i.imgur.com/oQX6c7A.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 20em;
     margin-left: 10em;
     display:inline;
