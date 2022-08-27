@@ -10,6 +10,7 @@ const bookSchema = new mongoose.Schema({
     isbn: String,
     borrowed: Boolean,
     borrowedBy: String,
+    username: String,
 })
 
 const Book = mongoose.model('Book', bookSchema)

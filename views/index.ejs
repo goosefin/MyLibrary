@@ -2,6 +2,7 @@
     <h1 id="index-h1">Your Library</h1>
     <ul>
         <% for(let i = 0; i < allBooks.length; i++) { %>
+            <% if(allBooks[i].username == user.username) { %>
             <li class="card">
                 <a href="/mylibrary/<%=allBooks[i].id%>" class="card-link card-header">
                     <%=allBooks[i].title%> 
@@ -10,6 +11,7 @@
                 <!-- <img src="https://covers.openlibrary.org/b/isbn/<%=allBooks[i].isbn%>-M.jpg" alt=""/> -->
                 <img src="https://pictures.abebooks.com/isbn/<%=allBooks[i].isbn%>-us-300.jpg" alt="book cover">
             </li>
+            <% } %> 
         <% } %> 
     </ul>
 </body>

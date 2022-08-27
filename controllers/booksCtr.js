@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/books.js')
+const User = require('../models/users.js')
 
 // Log In alert
 // const mustLogIn = (req,res,next) =>{
@@ -49,19 +50,23 @@ const authRequired = (req,res,next) =>{
 // })
 
 // Index
-router.get('/', (req,res) =>{
-    Book.find({}, (err, allBooks) =>{
-        if(err){
-            console.log(err)
-        }else{
-            res.render('index.ejs',{allBooks})
-        }
-    })
+router.get('/', authRequired, async (req,res) =>{
+    let allBooks = await Book.find({})
+    let user = await User.findById(req.session.currentUser._id)
+    res.render('index.ejs', {allBooks, user})
+    // Book.find({}, (err, allBooks) =>{
+    //     if(err){
+    //         console.log(err)
+    //     }else{
+    //         res.render('index.ejs',{allBooks})
+    //     }
+    // })
 })
 
 // New
 router.get('/new', authRequired, (req,res) =>{
-    res.render('new.ejs')
+    let user = User.findById(req.session.currentUser._id)
+    res.render('new.ejs',{user})
 })
 
 router.post('/', (req,res) =>{
@@ -75,10 +80,14 @@ router.post('/', (req,res) =>{
     } else{
         req.body.borrowed = false
     }
+    let user = User.findById(req.session.currentUser._id)
+    // req.body.username = req.session.currenUser.username
+    console.log(req.session.currentUser.username)
     Book.create(req.body, (err,book) =>{
         if(err){
             console.log(err)
         }else{
+            console.log(book)
             res.redirect('/mylibrary')
         }
     })
