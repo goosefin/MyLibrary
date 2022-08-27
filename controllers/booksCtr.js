@@ -54,19 +54,11 @@ router.get('/', authRequired, async (req,res) =>{
     let allBooks = await Book.find({})
     let user = await User.findById(req.session.currentUser._id)
     res.render('index.ejs', {allBooks, user})
-    // Book.find({}, (err, allBooks) =>{
-    //     if(err){
-    //         console.log(err)
-    //     }else{
-    //         res.render('index.ejs',{allBooks})
-    //     }
-    // })
 })
 
 // New
 router.get('/new', authRequired, (req,res) =>{
-    let user = User.findById(req.session.currentUser._id)
-    res.render('new.ejs',{user})
+    res.render('new.ejs')
 })
 
 router.post('/', (req,res) =>{
@@ -81,8 +73,7 @@ router.post('/', (req,res) =>{
         req.body.borrowed = false
     }
     let user = User.findById(req.session.currentUser._id)
-    // req.body.username = req.session.currenUser.username
-    console.log(req.session.currentUser.username)
+    req.body.username = req.session.currentUser.username
     Book.create(req.body, (err,book) =>{
         if(err){
             console.log(err)
@@ -118,6 +109,8 @@ router.put('/:id', (req,res) =>{
     } else{
         req.body.borrowed = false
     }
+    let user = User.findById(req.session.currentUser._id)
+    req.body.username = req.session.currentUser.username
     Book.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedBook) =>{
         res.redirect('/mylibrary/'+req.params.id)
     })

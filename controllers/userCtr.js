@@ -53,7 +53,7 @@ router.post('/signin', (req,res) =>{
 //Sign Out
 router.get('/signout', (req,res) =>{
     req.session.destroy()
-    res.redirect('/mylibrary')
+    res.redirect('/')
 })
 
 module.exports = router
