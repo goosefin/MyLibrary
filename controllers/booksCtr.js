@@ -13,7 +13,7 @@ const authRequired = (req,res,next) =>{
     if(req.session.currentUser){
         next()
     }else{
-        res.send('You have to log in to do that')
+        res.redirect('/users/signin')
     }
 }
 
