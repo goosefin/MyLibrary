@@ -17,9 +17,13 @@ User Stories:
 
 
 Wire Frames:
+
 <img width="945" alt="Landing Page" src="https://user-images.githubusercontent.com/104473610/187309143-b6117734-01d9-4f51-b168-0baae62c8032.png">
+
 <img width="941" alt="Index Page" src="https://user-images.githubusercontent.com/104473610/187309181-d43cabba-d7b3-406a-9994-9b65700a0266.png">
+
 <img width="947" alt="Create:New" src="https://user-images.githubusercontent.com/104473610/187309201-89688d52-9eab-408d-9909-ced517822ca6.png">
+
 <img width="943" alt="Show Page" src="https://user-images.githubusercontent.com/104473610/187309239-39c90491-1b28-4652-90eb-f718a59896ac.png">
 
 Here is a live link to my project:
