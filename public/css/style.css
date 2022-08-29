@@ -233,4 +233,22 @@ h6{
     #btn-div{
         margin-left: 2em;
     }
+
+    #new-book-form{
+        margin-left: 1.5em;
+        width: 90%;
+    }
+
+    .input-group{
+        width:20em;
+    }
+
+    #starRating{
+        width:20em;
+    }
+
+    #about{
+        margin-left:1em;
+        width: 15em;
+    }
 }
