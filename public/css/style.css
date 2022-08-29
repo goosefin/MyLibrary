@@ -251,4 +251,19 @@ h6{
         margin-left:1em;
         width: 15em;
     }
+
+    #sign-up-form{
+        margin-left: 1.5em;
+        width: 90%;
+    }
+
+    #sign-in-form{
+        margin-left: 1.5em;
+        width: 90%;
+    }
+
+    #edit-book-form{
+        margin-left: 1.5em;
+        width: 90%;
+    }
 }
