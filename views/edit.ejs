@@ -1,4 +1,8 @@
 <%- include('./partials/header.ejs') %>
+<title>Edit Page</title>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %> 
     <h1 id="edit-h1">Edit Book/Add Review</h1>
     <form action="/mylibrary/<%=book.id%>?_method=PUT" method="POST" id="edit-book-form">
         <fieldset class="input-group form-margin">
