@@ -129,6 +129,10 @@ li{
     color: #113435;
 }
 
+#book-cvr{
+    width: 17.9rem;
+}
+
 h6{
     font-size: .8em;
 }
@@ -152,6 +156,7 @@ h6{
     margin-right: 10em;
     margin-left: 3em;
     font-size: 1.5em;
+    width: 20em;
 }
 
 #info{
@@ -265,5 +270,9 @@ h6{
     #edit-book-form{
         margin-left: 1.5em;
         width: 90%;
+    }
+
+    #book-cvr{
+        width:9.9rem;
     }
 }

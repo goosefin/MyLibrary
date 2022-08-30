@@ -9,7 +9,9 @@
                     <h6 class="card-subtitle text-muted">By <%=allBooks[i].author%></h6>
                 </a>
                 <!-- <img src="https://covers.openlibrary.org/b/isbn/<%=allBooks[i].isbn%>-M.jpg" alt=""/> -->
-                <img src="https://pictures.abebooks.com/isbn/<%=allBooks[i].isbn%>-us-300.jpg" alt="book cover">
+                <a href="/mylibrary/<%=allBooks[i].id%>" id="book-cvr-link">
+                <img src="https://pictures.abebooks.com/isbn/<%=allBooks[i].isbn%>-us-300.jpg" alt="book cover" id="book-cvr">
+                </a>
             </li>
             <% } %> 
         <% } %> 
