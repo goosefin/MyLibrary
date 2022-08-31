@@ -13,19 +13,19 @@
             <p>Review: <%=book.review%></p>
             <p>Read Book:
                 <% if(book.status === true){ %>
-                 Yes
+                <span style="color:green;">Yes</span>
                 <% }else{ %>
-                 No
+                <span style="color:red;">No</span>
                 <% } %>
             </p>
             <p>Book Is Borrowed:
                 <% if(book.borrowed === true){ %>
-                    Yes
+                    <span style="color:green;">Yes</span>
                     <p>Borrowed By: <%=book.borrowedBy%></p>
                    <% }else{ %>
-                    No
-                   <% } %>
-            </p>       
+                    <span style="color:red;">No</span>
+                   <% } %>    
+            </p>     
         </div>
         </div>
 
