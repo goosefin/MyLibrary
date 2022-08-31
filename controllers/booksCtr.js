@@ -3,11 +3,6 @@ const router = express.Router()
 const Book = require('../models/books.js')
 const User = require('../models/users.js')
 
-// Log In alert
-// const mustLogIn = (req,res,next) =>{
-//     alert('You must be logged in to do that')
-// }
-
 //Authenification middleware
 const authRequired = (req,res,next) =>{
     if(req.session.currentUser){
@@ -78,7 +73,6 @@ router.post('/', (req,res) =>{
         if(err){
             console.log(err)
         }else{
-            console.log(book)
             res.redirect('/mylibrary')
         }
     })
